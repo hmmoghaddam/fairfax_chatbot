@@ -19,8 +19,8 @@ app = Flask(__name__)
 def webhook():
     req = request.get_json(silent=True, force=True)
 
-    print("Request:")
-    print(json.dumps(req, indent=4))
+    #print("Request:")
+    #print(json.dumps(req, indent=4))
 
     res = processRequest(req)
 
@@ -28,7 +28,7 @@ def webhook():
     print(res)
     r = make_response(res)
     r.headers['Content-Type'] = 'application/json'
-    print(r)
+    #print(r)
     return r
 def processRequest(req):
     if req.get("result").get("action") == "news.search":
@@ -48,8 +48,8 @@ def makeWebhookResult(data):
     speech=""
     for i in range(0,len(data)):    
         speech +=data[i]+". "
-    print("Response:")
-    print(speech)
+    #print("Response:")
+    #print(speech)
 
     return {
         "speech": speech,
