@@ -42,12 +42,12 @@ def read_sport_title():
     titles=[]
     for post in feed.entries:
         titles.append(post.title)
-    res= makeWebhookResult(titles[0:1])
+    res= makeWebhookResult(titles[0:3])
     return res
 def makeWebhookResult(data):
     speech=""
     for i in range(0,len(data)):    
-        speech +=data[i]+". "
+        speech +=str(i+1)+". "+data[i]+". "
     #print("Response:")
     #print(speech)
 
