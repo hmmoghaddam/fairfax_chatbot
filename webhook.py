@@ -52,7 +52,8 @@ def get_text(req):
     parameters = result.get("parameters")
     number = parameters.get("number")
     if number is None:
-        return None    
+        return None
+    print(contents)    
     speech= contents[number]
     return {
         "speech": speech,
