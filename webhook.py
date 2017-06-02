@@ -53,7 +53,7 @@ def get_text(req):
     number = parameters.get("number")
     if number is None:
         return None
-    print(number)    
+    print(titles)    
     speech= titles[int(number)]
     return {
         "speech": speech,
