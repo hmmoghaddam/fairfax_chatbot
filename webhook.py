@@ -66,8 +66,7 @@ def makeWebhookResult(data):
     speech=""
     for i in range(0,len(data)):    
         speech +=str(i+1)+". "+data[i]+". "
-    #print("Response:")
-    #print(speech)
+  
 
     return {
         "speech": speech,
