@@ -44,7 +44,7 @@ def read_news_title():
     
     for post in feed.entries:
         titles.append(post.title)
-        contents.append(post.content)
+        contents.append(post.summary)
     res= makeWebhookResult(titles[0:3])
     return res
 def get_text(req):
@@ -78,6 +78,7 @@ def makeWebhookResult(data):
 if __name__ == '__main__':
     titles=[]
     contents=[]
+    read_news_title()
     port = int(os.getenv('PORT', 5000))
 
     print("Starting app on port %d" % port)
