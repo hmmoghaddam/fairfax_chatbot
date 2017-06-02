@@ -54,7 +54,7 @@ def get_text(req):
     if number is None:
         return None
     print(int(number))    
-    speech= contents[int(number)]
+    speech= titles[int(number)]
     return {
         "speech": speech,
         "displayText": speech,
