@@ -25,9 +25,10 @@ def webhook():
     res = processRequest(req)
 
     res = json.dumps(res, indent=4)
-    # print(res)
+    print(res)
     r = make_response(res)
     r.headers['Content-Type'] = 'application/json'
+    print(r)
     return r
 def processRequest(req):
     if req.get("result").get("action") == "news.search":
