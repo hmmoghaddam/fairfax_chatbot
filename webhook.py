@@ -32,7 +32,7 @@ def webhook():
     return r
 def processRequest(req):
     if req.get("result").get("action") == "news.search":
-        read_sport_title()
+        return read_sport_title()
     elif req.get("result").get("action") == "article.open":
         return {}
     else:
@@ -59,6 +59,7 @@ def makeWebhookResult(data):
         "source": "Fairfax Chatbot"
     }    
 if __name__ == '__main__':
+   
     port = int(os.getenv('PORT', 5000))
 
     print("Starting app on port %d" % port)
