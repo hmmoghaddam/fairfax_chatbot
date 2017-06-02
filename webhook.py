@@ -19,8 +19,8 @@ app = Flask(__name__)
 def webhook():
     req = request.get_json(silent=True, force=True)
 
-    #print("Request:")
-    #print(json.dumps(req, indent=4))
+    print("Request:")
+    print(json.dumps(req, indent=4))
 
     res = processRequest(req)
     print(res)
@@ -32,12 +32,12 @@ def webhook():
     return r
 def processRequest(req):
     if req.get("result").get("action") == "news.search":
-        return read_sport_title()
+        return read_news_title()
     elif req.get("result").get("action") == "article.open":
         return {}
     else:
         return {}
-def read_sport_title():
+def read_news_title():
     feed = feedparser.parse("http://www.stuff.co.nz/rss/")
     titles=[]
     for post in feed.entries:
