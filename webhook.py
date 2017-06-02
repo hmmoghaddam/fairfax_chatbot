@@ -53,8 +53,8 @@ def makeWebhookResult(data):
     return {
         "speech": speech,
         "displayText": speech,
-        # "data": data,
-        # "contextOut": [],
+        "data": {},
+        "contextOut": [],
         "source": "Fairfax Chatbot"
     }    
 if __name__ == '__main__':
