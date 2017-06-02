@@ -53,8 +53,8 @@ def get_text(req):
     number = parameters.get("number")
     if number is None:
         return None
-    print(contents)    
-    speech= contents[number]
+    print(int(number))    
+    speech= contents[int(number)]
     return {
         "speech": speech,
         "displayText": speech,
@@ -79,7 +79,7 @@ def makeWebhookResult(data):
 if __name__ == '__main__':
     titles=[]
     contents=[]
-    read_news_title()
+    
     port = int(os.getenv('PORT', 5000))
 
     print("Starting app on port %d" % port)
